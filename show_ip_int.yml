@@ -5,8 +5,13 @@
 
   tasks:
   - name: show ip
-    iso_command:
+    cisco.ios.ios_command:
       commands: show ip int bri
-    register: output
+     register: output
 
-  - debug: var=output.stdout_lines
+# -  debug: var=output.stdout_lines
+
+
+- name: run show version on remote devices
+  cisco.ios.ios_command:
+    commands: show version
