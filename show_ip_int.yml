@@ -3,6 +3,6 @@
   hosts: all
   gather_fact: no
 
-  - name: show ip    
+- name: show ip    
   iso_command:
     commands: show ip int bri
