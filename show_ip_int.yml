@@ -4,6 +4,11 @@
   gather_facts: no
 
   tasks:
+  - name: Create loopback
+    ios_interface:
+      name: loopback 199
+      state: up
+
   - name: show ip
     ios_command:
       commands: show ip int bri
@@ -11,8 +16,10 @@
   - debug: var=output.stdout_lines
 
 
-  - name: run show version on remote devices
-    ios_command:
-      commands: show version
-    register: output
-  - debug: var=output.stdout_lines
+  # - name: run show version on remote devices
+  #   ios_command:
+  #     commands: show version
+  #   register: output
+  # - debug: var=output.stdout_lines
+
+  
