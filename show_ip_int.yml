@@ -1,8 +1,12 @@
 ---
 - name: Cau hinh Switch
   hosts: all
-  gather_fact: no
+  gather_facts : no
 
-- name: show ip    
-  iso_command:
-    commands: show ip int bri
+  tasks:
+  - name: show ip
+    iso_command:
+      commands: show ip int bri
+    register: output
+
+  - debug: var=output.stdout_lines
