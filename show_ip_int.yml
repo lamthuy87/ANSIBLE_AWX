@@ -8,10 +8,11 @@
     ios_command:
       commands: show ip int bri
     register: output
-
-# -  debug: var=output.stdout_lines
+  - debug: var=output.stdout_lines
 
 
   - name: run show version on remote devices
     ios_command:
       commands: show version
+    register: output
+  - debug: var=output.stdout_lines
