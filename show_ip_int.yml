@@ -1,0 +1,7 @@
+---
+- name: Cau hinh Switch
+  hosts: all
+  tasks:
+  -  name: show ip
+    ciso.ios.iso_command
+      commands: show ip int bri
