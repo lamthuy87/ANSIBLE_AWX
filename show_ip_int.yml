@@ -1,7 +1,8 @@
 ---
 - name: Cau hinh Switch
   hosts: all
-  tasks:
-  -  name: show ip
-    iso_command:
-      commands: show ip int bri
+  gather_fact: no
+
+  - name: show ip    
+  iso_command:
+    commands: show ip int bri
