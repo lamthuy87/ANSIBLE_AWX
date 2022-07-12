@@ -9,6 +9,15 @@
       name: loopback 199
       state: up
 
+  - name: Set loopback IPv4 Address
+      ios_l2_interface:
+        name: loopback {{item.name}}
+        ipv4: 10.0.{{item.number}}.1/24
+      with_items:
+        - { name: "0", number: 0}
+        - { name: "1", number: 1}
+        - { name: "2", number: 2}
+
   - name: show ip
     ios_command:
       commands: show ip int bri
