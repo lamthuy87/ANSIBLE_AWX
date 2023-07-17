@@ -1,0 +1,17 @@
+---
+- name: Cau hinh loopback
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    -  name: Set lo0 ipv4 address
+       ios_l3_interface:
+         name: loopback 0
+         ipv4: 7.7.7.7/32
+
+    -  name: No Shut lo0
+       ios_interface:
+         name: loopback 0
+         enabled: true
+
+
